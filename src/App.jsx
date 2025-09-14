@@ -125,7 +125,7 @@ const Projects = () => {
       <div className="grid gap-6 md:grid-cols-3">
         <ProjectCard
           title="Constructing Futures"
-          description="Ethnography of transhumanism in Honduras exploring futures and sociotechnical imaginaries."
+          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'. What can this intriguing group tell us about the way emerging technologies are changing our understanding of our own species - 'the Human'?"
           imageUrl="/IMG_8581.jpeg"
           onOpen={() =>
             openPopout("Constructing Futures", [
@@ -135,7 +135,7 @@ const Projects = () => {
         />
         <ProjectCard
           title="Opportunity Barriers"
-          description="Systems map of barriers faced by young migrants in the UK, reframing integration as opportunity."
+          description="We use systems mapping to examine the problem of opportunity barriers faced by young first and second generation migrants in the UK. This powerful tool helps us uncover the feedback loops reinforcing intergenertational disadvantage, and re-frames the notion of 'integration' as a systems issue."
           imageUrl="/MTS-Map.jpeg"
           onOpen={() =>
             openPopout("Opportunity Barriers", [
@@ -147,7 +147,7 @@ const Projects = () => {
         />
         <ProjectCard
           title="The Emergence of COVID-19"
-          description="Interdisciplinary analysis of the ecological and social factors in the pandemic’s emergence."
+          description="A short 2023 essay, submitted for my Human Sciences coursework, which tracks the key factors which led to the emergence of the pandemic. For many, it's a debate between 'Natural' and 'Man-made', but I look to uncover the commonalities to both narratives. No matter how this virus came into existance, it's clear why it turned into a pandemic."
           imageUrl="/covid.jpeg"
           onOpen={() =>
             openPopout("The Emergence of COVID-19", [
