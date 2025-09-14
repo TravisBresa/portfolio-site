@@ -23,9 +23,9 @@ const Hero = () => (
   <Section id="home" className="pb-12">
     <div className="flex flex-col items-center text-center">
       <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">Travis Bresa</h1>
-      <p className="mt-4 max-w-2xl text-slate-600">
-        A clean, one-page portfolio with subtle animations and space for images.
-      </p>
+     <p className="mt-4 max-w-2xl text-slate-600">
+  Ethnographer. Systems Thinker. Explorer.
+</p>
       <a
         href="https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/078db8f4-5189-46b1-a34b-b3690b5d3d77/Travis_Bresa_CV_(1).pdf?table=block&id=26ee16bb-a140-8013-9ffe-cdbc47f16822&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=Itzhmy1eQsSYYaKdIvOLLe9I2-qVXULmcvuZ_W_XT8k&downloadName=Travis+Bresa+CV+%281%29.pdf"
         target="_blank"
@@ -174,3 +174,5 @@ export default function PortfolioSite() {
     </div>
   );
 }
+
+
