@@ -27,7 +27,7 @@ const Hero = () => (
   Ethnographer. Systems Thinker. Explorer.
 </p>
       <a
-        href="https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/078db8f4-5189-46b1-a34b-b3690b5d3d77/Travis_Bresa_CV_(1).pdf?table=block&id=26ee16bb-a140-8013-9ffe-cdbc47f16822&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=Itzhmy1eQsSYYaKdIvOLLe9I2-qVXULmcvuZ_W_XT8k&downloadName=Travis+Bresa+CV+%281%29.pdf"
+        href="/cv.pdf"
         target="_blank"
         rel="noreferrer"
         className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
@@ -129,7 +129,7 @@ const Projects = () => {
           imageUrl="/IMG_8581.jpeg"
           onOpen={() =>
             openPopout("Constructing Futures", [
-              { label: "Full Dissertation", url: "https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/a450f327-0f2f-4dd6-b442-2f289d0ff033/Dissertation_Constructing_Futures.pdf?table=block&id=26ee16bb-a140-800d-9d99-f5b73c18a9f7&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=XYC4QCY9hwZhXHGjvxMGrOqWRdvJaIDK2VCs1RELo8s&downloadName=Dissertation+Constructing+Futures.pdf" }
+              { label: "Full Dissertation", url: "/constructing-futures.pdf" }
             ], "/IMG_8581.jpeg")
           }
         />
@@ -139,9 +139,9 @@ const Projects = () => {
           imageUrl="/MTS-Map.jpeg"
           onOpen={() =>
             openPopout("Opportunity Barriers", [
-              { label: "Report", url: "https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/1cca02e8-10bd-4862-b7ff-1ce10253bffa/Map_the_System_Report.pdf?table=block&id=26ee16bb-a140-8072-84a6-dccf3df55d05&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=OBS9pCF5qpKGWTxz1K9cKULmn1YbMzUc8kfS5wKy0Ao&downloadName=Map+the+System+Report.pdf" },
-              { label: "Reference List", url: "https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/4b5e8a9c-4eab-4043-bc24-93ebb31b59b6/Reference_List.pdf?table=block&id=26ee16bb-a140-8093-a87c-ddf9975e4644&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=AQogqLlJAZs4VMhTWfTJJv_vTr_Qmllt4UehTAZbAFs&downloadName=Reference+List.pdf" },
-              { label: "Systems Map", url: "https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/952186d6-4108-43c1-8356-49c79b09782e/Systems_Map.pdf?table=block&id=26ee16bb-a140-80a5-9b9f-cdf65ac2a19e&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=zG3PW4aQ6I_SJPNVo_2cO5hIW2mSMm9uP1SezqAAC0w&downloadName=Systems+Map.pdf" }
+              { label: "Report", url: "/opportunity-report.pdf" },
+              { label: "Reference List", url: "/opportunity-refs.pdf" },
+              { label: "Systems Map", url: "/systems-map.pdf" }
             ], "/MTS-Map.jpeg")
           }
         />
@@ -151,7 +151,7 @@ const Projects = () => {
           imageUrl="/covid.jpeg"
           onOpen={() =>
             openPopout("The Emergence of COVID-19", [
-              { label: "Full Essay", url: "https://file.notion.so/f/f/c8f37012-1ccf-4d83-87c7-b308b417ebea/ef95cc37-e570-416c-ba2e-eaeb6a7d55e0/Human_Ecology_Essay_2023_(1).pdf?table=block&id=26ee16bb-a140-8071-872b-f3b0b3fc5416&spaceId=c8f37012-1ccf-4d83-87c7-b308b417ebea&expirationTimestamp=1757880000000&signature=HRsPzka2uxOTA8o-ry5D2NMrNmOuBg1uFEKdBSBHXFQ&downloadName=Human+Ecology+Essay+2023+%281%29.pdf" }
+              { label: "Full Essay", url: "/covid-essay.pdf" }
             ], "/covid.jpeg")
           }
         />
