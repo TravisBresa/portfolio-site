@@ -27,7 +27,7 @@ const Hero = () => (
   Ethnographer. Systems Thinker. Explorer.
 </p>
       <a
-        href="/cv.pdf"
+        href="/CV.pdf"
         target="_blank"
         rel="noreferrer"
         className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
