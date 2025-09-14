@@ -56,7 +56,7 @@ const ProjectCard = ({ title, description, onOpen, imageUrl }) => (
   </div>
 );
 
-const Popout = ({ isOpen, onClose, title, extraLinks, coverImage }) => (
+const Popout = ({ isOpen, onClose, title, extraLinks, coverImage, caption, context, insights }) => (
   <AnimatePresence>
     {isOpen && (
       <motion.div
@@ -77,32 +77,41 @@ const Popout = ({ isOpen, onClose, title, extraLinks, coverImage }) => (
               <X className="h-5 w-5" />
             </button>
           </div>
-          <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-slate-50">
-            {coverImage ? (
-              <img src={coverImage} alt={title} className="max-h-[70vh] rounded shadow" />
-            ) : (
-              <p className="text-slate-500">No preview available</p>
+
+          <div className="flex-1 overflow-auto p-6 space-y-6 bg-slate-50">
+            {coverImage && (
+              <div className="text-center">
+                <img src={coverImage} alt={title} className="mx-auto max-h-64 rounded shadow" />
+                {caption && <p className="mt-2 text-sm text-slate-500 italic">{caption}</p>}
+              </div>
+            )}
+            {context && (
+              <div>
+                <h3 className="font-semibold text-slate-800 mb-1">Context</h3>
+                <p className="text-slate-700">{context}</p>
+              </div>
+            )}
+            {insights && (
+              <div>
+                <h3 className="font-semibold text-slate-800 mb-1">Insights</h3>
+                <p className="text-slate-700">{insights}</p>
+              </div>
             )}
           </div>
+
           {extraLinks && extraLinks.length > 0 && (
             <div className="flex flex-wrap gap-4 border-t bg-slate-100 px-4 py-3 justify-center">
-              {extraLinks.map((link, index) => {
-                let Icon = FileText;
-                if (link.label.toLowerCase().includes("map")) Icon = Network;
-                if (link.label.toLowerCase().includes("reference")) Icon = FileArchive;
-                if (link.label.toLowerCase().includes("dissertation") || link.label.toLowerCase().includes("essay")) Icon = FileText;
-                return (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
-                  >
-                    <Icon className="h-4 w-4" /> Download {link.label}
-                  </a>
-                );
-              })}
+              {extraLinks.map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
+                >
+                  <FileText className="h-4 w-4" /> Download {link.label}
+                </a>
+              ))}
             </div>
           )}
         </motion.div>
@@ -111,50 +120,84 @@ const Popout = ({ isOpen, onClose, title, extraLinks, coverImage }) => (
   </AnimatePresence>
 );
 
+// --- Projects Section ---
 const Projects = () => {
-  const [popout, setPopout] = useState({ isOpen: false, title: "", extraLinks: [], coverImage: "" });
+  const [popout, setPopout] = useState({
+    isOpen: false,
+    title: "",
+    extraLinks: [],
+    coverImage: "",
+    caption: "",
+    context: "",
+    insights: ""
+  });
 
-  const openPopout = (title, extraLinks = [], coverImage = "") => {
-    setPopout({ isOpen: true, title, extraLinks, coverImage });
+  const openPopout = (title, extraLinks = [], coverImage = "", caption = "", context = "", insights = "") => {
+    setPopout({ isOpen: true, title, extraLinks, coverImage, caption, context, insights });
   };
 
-  const closePopout = () => setPopout({ isOpen: false, title: "", extraLinks: [], coverImage: "" });
+  const closePopout = () =>
+    setPopout({ isOpen: false, title: "", extraLinks: [], coverImage: "", caption: "", context: "", insights: "" });
 
   return (
     <Section id="projects" className="pt-8">
       <div className="grid gap-6 md:grid-cols-3">
+
+        {/* --- Constructing Futures --- */}
         <ProjectCard
           title="Constructing Futures"
-          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'. What can this intriguing group tell us about the way emerging technologies are changing our understanding of our own species - 'the Human'?"
+          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'."
           imageUrl="/IMG_8581.jpeg"
           onOpen={() =>
-            openPopout("Constructing Futures", [
-              { label: "Full Dissertation", url: "/constructing-futures.pdf" }
-            ], "/IMG_8581.jpeg")
+            openPopout(
+              "Constructing Futures",
+              [{ label: "Full Dissertation", url: "/constructing-futures.pdf" }],
+              "/IMG_8581.jpeg",
+              "A hand crafted Paper-mâché skull, burned by the Vitalia community as a proclamation of 'La muerte de la muerte', the death of death.",
+              "My dissertation explored how emerging technologies shape our understanding of 'the Human.' Through ethnographic research at Vitalia, a transhumanist community in Próspera, Honduras, I studied both biotechnological self-enhancement and political infrastructures designed for radical experimentation.",
+              "What can this intriguing group tell us about the way emerging technologies are changing our understanding of our own species — 'the Human'? The project shows how technologies of the self and political infrastructures together generate new imaginaries of human futures, while also producing exclusions."
+            )
           }
         />
+
+        {/* --- Opportunity Barriers --- */}
         <ProjectCard
           title="Opportunity Barriers"
-          description="We use systems mapping to examine the problem of opportunity barriers faced by young first and second generation migrants in the UK. This powerful tool helps us uncover the feedback loops reinforcing intergenertational disadvantage, and re-frames the notion of 'integration' as a systems issue."
+          description="We use systems mapping to examine the problem of opportunity barriers faced by young first and second generation migrants in the UK."
           imageUrl="/MTS-Map.jpeg"
           onOpen={() =>
-            openPopout("Opportunity Barriers", [
-              { label: "Report", url: "/opportunity-report.pdf" },
-              { label: "Reference List", url: "/opportunity-refs.pdf" },
-              { label: "Systems Map", url: "/systems-map.pdf" }
-            ], "/MTS-Map.jpeg")
+            openPopout(
+              "Opportunity Barriers",
+              [
+                { label: "Report", url: "/opportunity-report.pdf" },
+                { label: "Reference List", url: "/opportunity-refs.pdf" },
+                { label: "Systems Map", url: "/systems-map.pdf" }
+              ],
+              "/MTS-Map.jpeg",
+              "A systems visualisation of the contributing factors to opportunity barriers faced by young migrants, created in Kumo.io.",
+              "This project mapped the systemic barriers faced by young migrants in the UK, reframing integration as a dynamic process of opportunity-building. Using systems mapping and community research, we analysed how bridging social capital, contradictory policies, and delayed access to education reinforced intergenerational disadvantage.",
+              "This powerful tool helps us uncover the feedback loops that sustain inequality and demonstrates how integration is less about assimilation and more about addressing systemic opportunity gaps. The work highlighted both the importance and the limitations of grassroots and policy interventions."
+            )
           }
         />
+
+        {/* --- The Emergence of COVID-19 --- */}
         <ProjectCard
           title="The Emergence of COVID-19"
-          description="A short 2023 essay, submitted for my Human Sciences coursework, which tracks the key factors which led to the emergence of the pandemic. For many, it's a debate between 'Natural' and 'Man-made', but I look to uncover the commonalities to both narratives. No matter how this virus came into existance, it's clear why it turned into a pandemic."
+          description="A short 2023 essay, submitted for my Human Sciences coursework, which tracks the key factors that led to the emergence of the pandemic."
           imageUrl="/covid.jpeg"
           onOpen={() =>
-            openPopout("The Emergence of COVID-19", [
-              { label: "Full Essay", url: "/covid-essay.pdf" }
-            ], "/covid.jpeg")
+            openPopout(
+              "The Emergence of COVID-19",
+              [{ label: "Full Essay", url: "/covid-essay.pdf" }],
+              "/covid.jpeg",
+              "A digital rendering of the SARS-CoV-2 virion.",
+              "This essay examined the ecological and social factors that enabled the emergence of the pandemic, situating it within broader human–environment systems. Drawing on interdisciplinary sources, I explored how urbanisation, wildlife–human interfaces, and political fragility contributed to the crisis.",
+              "For many, the question is framed as a debate between 'Natural' and 'Man-made.' My analysis sought to uncover their commonalities, showing that regardless of origin, systemic vulnerabilities explain why the virus became a pandemic."
+            )
           }
         />
+
       </div>
       <Popout {...popout} onClose={closePopout} />
     </Section>
