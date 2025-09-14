@@ -22,8 +22,9 @@ const Section = ({ id, children, className = "" }) => (
 const Hero = () => (
   <Section id="home" className="pb-12">
     <div className="flex flex-col items-center text-center">
-      <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">Travis Bresa</h1>
-     <p className="mt-4 max-w-2xl text-slate-600">
+<h1 className="text-5xl font-bold tracking-wide sm:text-6xl">
+  Travis&nbsp;&nbsp;Bresa </h1>     
+      <p className="mt-4 max-w-2xl text-slate-600">
   Ethnographer. Systems Thinker. Explorer.
 </p>
       <a
