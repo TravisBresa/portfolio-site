@@ -154,8 +154,8 @@ const Projects = () => {
               [{ label: "Full Dissertation", url: "/constructing-futures.pdf" }],
               "/IMG_8581.jpeg",
               "A hand crafted Paper-mâché skull, burned by the Vitalia community as a proclamation of 'La muerte de la muerte', the death of death.",
-              "My dissertation explored how emerging technologies shape our understanding of 'the Human.' Through ethnographic research at Vitalia, a transhumanist community in Próspera, Honduras, I studied both biotechnological self-enhancement and political infrastructures designed for radical experimentation.",
-              "What can this intriguing group tell us about the way emerging technologies are changing our understanding of our own species — 'the Human'? The project shows how technologies of the self and political infrastructures together generate new imaginaries of human futures, while also producing exclusions."
+              "This research project engages with a unique collective, in a unique environment. My first foray into the world of ethnographic research, it’s a rough first attempt at addressing the question of how emerging technologies impact the way we represent our species (’the Human’). This project was submitted as my dissertation for my Human Sciences degree.",
+              "I explore an original ethnography of Vitalia, an intentional community located strategically within Próspera on the Honduran island of Roatan.  I originally visited Vitalia only to gain a better understanding of transhumanist imaginaries of the Human, of how biotechnology had been enabling the redefinition of the human body and mind. Indeed these technologies of the self are revealed to extend definitions of the body, adding additional ways to perceive and sense the external world. However, while there, I became fascinated by a second class of technology present: the unique political technology of Próspera. <br /><br /> Próspera meanwhile is an ambitious attempt at creating a decentralised, technology focused society within the borders of Honduras. Its residents enjoy exemption from the civil legal codes followed by everyone else in the country. Its legal infrastructure is set up to create, as they state, “the future we want”, creating a low regulation environment for AI researchers, experimental gene therapy trials and medical tourism. Stepping back reveals however that Próspera creates just as many new borders as its founders claim to eliminate. It overlooks and excludes Honduran indigenous voices, creating an ‘encrypted geography’in which a newly redefined 'Human' is taking shape."
             )
           }
         />
@@ -175,8 +175,8 @@ const Projects = () => {
               ],
               "/MTS-Map.jpeg",
               "A systems visualisation of the contributing factors to opportunity barriers faced by young migrants, created in Kumo.io.",
-              "This project mapped the systemic barriers faced by young migrants in the UK, reframing integration as a dynamic process of opportunity-building. Using systems mapping and community research, we analysed how bridging social capital, contradictory policies, and delayed access to education reinforced intergenerational disadvantage.",
-              "This powerful tool helps us uncover the feedback loops that sustain inequality and demonstrates how integration is less about assimilation and more about addressing systemic opportunity gaps. The work highlighted both the importance and the limitations of grassroots and policy interventions."
+              "I led a team to the final of the Map the System Oxford campus competiton, a research contest inviting participants to utilise systems mapping to outline a particular problem. This project was important personally, as the child of an immigrant. Barriers to integration fuel intergenerational inequality while also causing society to miss out on considerable human capital.",
+              "The powerful tool of systems mapping helps us uncover the feedback loops that sustain inequality. We show that factors underlying this include the difficulty many migrant families face in building what sociologists call 'bridging social capital', ties that facilitate connections with (social, ethnic or class-based) groups other than your own. As we illustrate, children and young migrants are also between contradictory policy areas in the UK, often unable to access education for months after they arrive."
             )
           }
         />
@@ -192,8 +192,8 @@ const Projects = () => {
               [{ label: "Full Essay", url: "/covid-essay.pdf" }],
               "/covid.jpeg",
               "A digital rendering of the SARS-CoV-2 virion.",
-              "This essay examined the ecological and social factors that enabled the emergence of the pandemic, situating it within broader human–environment systems. Drawing on interdisciplinary sources, I explored how urbanisation, wildlife–human interfaces, and political fragility contributed to the crisis.",
-              "For many, the question is framed as a debate between 'Natural' and 'Man-made.' My analysis sought to uncover their commonalities, showing that regardless of origin, systemic vulnerabilities explain why the virus became a pandemic."
+              "This essay examined the factors that enabled the emergence of the pandemic, situating it within broader human–environment systems. Drawing on interdisciplinary sources, I explored how social and environmental factors contributed to the crisis.",
+              "For many, the question is framed as a debate between 'Natural' and 'Man-made'. However, of the exact 'origin' of SARS-CoV-2, systemic vulnerabilities account for why the virus became a pandemic."
             )
           }
         />
