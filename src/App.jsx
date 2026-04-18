@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, FileText, FileArchive, Network, Mail, X } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 
 const Container = ({ children }) => (
   <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
@@ -265,6 +266,7 @@ export default function PortfolioSite() {
       <footer className="py-6 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} Travis Bresa
       </footer>
+      <Analytics />
     </div>
   );
 }
