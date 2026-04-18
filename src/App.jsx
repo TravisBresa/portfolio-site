@@ -28,11 +28,12 @@ const Hero = () => (
       <p className="mt-4 max-w-2xl text-slate-600">
         Ethnographer. Systems Thinker. Explorer.
       </p>
+
       <a
         href="mailto:Travis.bresa@gmail.com"
-        className="mt-6 text-sm text-slate-500 underline underline-offset-4 transition hover:text-slate-900"
+        className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
       >
-        Get in touch
+        <Mail className="h-4 w-4" /> Get in touch
       </a>
     </div>
   </Section>
