@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Download, FileText, FileArchive, Network, FileUser, X } from "lucide-react";
+import { ExternalLink, FileText, FileArchive, Network, X } from "lucide-react";
 
 const Container = ({ children }) => (
   <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
@@ -22,36 +22,35 @@ const Section = ({ id, children, className = "" }) => (
 const Hero = () => (
   <Section id="home" className="pb-12">
     <div className="flex flex-col items-center text-center">
-<h1 className="text-5xl font-bold tracking-wide sm:text-6xl">
-  Travis&nbsp;&nbsp;Bresa </h1>     
+      <h1 className="text-5xl font-bold tracking-wide sm:text-6xl">
+        Travis&nbsp;&nbsp;Bresa
+      </h1>
       <p className="mt-4 max-w-2xl text-slate-600">
-  Ethnographer. Systems Thinker. Explorer.
-</p>
+        Ethnographer. Systems Thinker. Explorer.
+      </p>
       <a
-        href="/CV.pdf"
-        target="_blank"
-        rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
+        href="mailto:Travis.bresa@gmail.com"
+        className="mt-6 text-sm text-slate-500 underline underline-offset-4 transition hover:text-slate-900"
       >
-        <Download className="h-4 w-4" /> View CV
+        Get in touch
       </a>
     </div>
   </Section>
 );
 
 const ProjectCard = ({ title, description, onOpen, imageUrl }) => (
-  <div className="rounded-xl border bg-white shadow-sm overflow-hidden flex flex-col">
-    <div className="w-full h-48 bg-slate-100">
-      <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
+  <div className="flex flex-col overflow-hidden rounded-xl border bg-white shadow-sm">
+    <div className="h-48 w-full bg-slate-100">
+      <img src={imageUrl} alt={title} className="h-full w-full object-cover" />
     </div>
-    <div className="p-4 flex flex-col flex-1 justify-between">
+    <div className="flex flex-1 flex-col justify-between p-4">
       <div>
         <h4 className="text-lg font-semibold">{title}</h4>
         <p className="text-sm text-slate-600">{description}</p>
       </div>
       <button
         onClick={onOpen}
-        className="mt-4 inline-flex items-center justify-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900 w-full"
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900"
       >
         View more <ExternalLink className="h-4 w-4" />
       </button>
@@ -59,7 +58,16 @@ const ProjectCard = ({ title, description, onOpen, imageUrl }) => (
   </div>
 );
 
-const Popout = ({ isOpen, onClose, title, extraLinks, coverImage, caption, context, insights }) => (
+const Popout = ({
+  isOpen,
+  onClose,
+  title,
+  extraLinks,
+  coverImage,
+  caption,
+  context,
+  insights,
+}) => (
   <AnimatePresence>
     {isOpen && (
       <motion.div
@@ -72,55 +80,71 @@ const Popout = ({ isOpen, onClose, title, extraLinks, coverImage, caption, conte
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           exit={{ scale: 0.9 }}
-          className="relative h-[90vh] w-full max-w-5xl overflow-hidden rounded-lg bg-white shadow-lg flex flex-col"
+          className="relative flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-lg bg-white shadow-lg"
         >
           <div className="flex items-center justify-between border-b px-4 py-2">
             <h2 className="text-lg font-semibold">{title}</h2>
-            <button onClick={onClose} className="text-slate-500 hover:text-slate-800">
+            <button
+              onClick={onClose}
+              className="text-slate-500 hover:text-slate-800"
+            >
               <X className="h-5 w-5" />
             </button>
           </div>
 
-          <div className="flex-1 overflow-auto p-6 space-y-6 bg-slate-50">
+          <div className="flex-1 space-y-6 overflow-auto bg-slate-50 p-6">
             {coverImage && (
               <div className="text-center">
-                <img src={coverImage} alt={title} className="mx-auto max-h-64 rounded shadow" />
-                {caption && <p className="mt-2 text-sm text-slate-500 italic">{caption}</p>}
+                <img
+                  src={coverImage}
+                  alt={title}
+                  className="mx-auto max-h-64 rounded shadow"
+                />
+                {caption && (
+                  <p className="mt-2 text-sm italic text-slate-500">{caption}</p>
+                )}
               </div>
             )}
+
             {context && (
-  <div>
-    <h3 className="font-semibold text-slate-800 mb-1">Context</h3>
-    <p className="text-slate-700 whitespace-pre-line">{context}</p>
-  </div>
-)}
-{insights && (
-  <div>
-    <h3 className="font-semibold text-slate-800 mb-1">Insights</h3>
-    <p className="text-slate-700 whitespace-pre-line">{insights}</p>
-  </div>
-)}
+              <div>
+                <h3 className="mb-1 font-semibold text-slate-800">Context</h3>
+                <p className="whitespace-pre-line text-slate-700">{context}</p>
+              </div>
+            )}
+
+            {insights && (
+              <div>
+                <h3 className="mb-1 font-semibold text-slate-800">Insights</h3>
+                <p className="whitespace-pre-line text-slate-700">{insights}</p>
+              </div>
+            )}
           </div>
 
           {extraLinks && extraLinks.length > 0 && (
-            <div className="flex flex-wrap gap-4 border-t bg-slate-100 px-4 py-3 justify-center">
-{extraLinks.map((link, index) => (
-  <a
-    key={index}
-    href={link.url}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center justify-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900 w-full sm:w-auto"
-  >
-    {link.label.toLowerCase().includes("cv") && <FileUser className="h-4 w-4" />}
-    {link.label.toLowerCase().includes("map") && <Network className="h-4 w-4" />}
-    {link.label.toLowerCase().includes("reference") && <FileArchive className="h-4 w-4" />}
-    {(link.label.toLowerCase().includes("dissertation") ||
-      link.label.toLowerCase().includes("essay") ||
-      link.label.toLowerCase().includes("report")) && <FileText className="h-4 w-4" />}
-    Download {link.label}
-  </a>
-))}
+            <div className="flex flex-wrap justify-center gap-4 border-t bg-slate-100 px-4 py-3">
+              {extraLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded bg-slate-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-slate-900 sm:w-auto"
+                >
+                  {link.label.toLowerCase().includes("map") && (
+                    <Network className="h-4 w-4" />
+                  )}
+                  {link.label.toLowerCase().includes("reference") && (
+                    <FileArchive className="h-4 w-4" />
+                  )}
+                  {(link.label.toLowerCase().includes("dissertation") ||
+                    link.label.toLowerCase().includes("essay") ||
+                    link.label.toLowerCase().includes("report")) && (
+                    <FileText className="h-4 w-4" />
+                  )}
+                  Download {link.label}
+                </a>
+              ))}
             </div>
           )}
         </motion.div>
@@ -129,7 +153,6 @@ const Popout = ({ isOpen, onClose, title, extraLinks, coverImage, caption, conte
   </AnimatePresence>
 );
 
-// --- Projects Section ---
 const Projects = () => {
   const [popout, setPopout] = useState({
     isOpen: false,
@@ -138,38 +161,58 @@ const Projects = () => {
     coverImage: "",
     caption: "",
     context: "",
-    insights: ""
+    insights: "",
   });
 
-  const openPopout = (title, extraLinks = [], coverImage = "", caption = "", context = "", insights = "") => {
-    setPopout({ isOpen: true, title, extraLinks, coverImage, caption, context, insights });
+  const openPopout = (
+    title,
+    extraLinks = [],
+    coverImage = "",
+    caption = "",
+    context = "",
+    insights = ""
+  ) => {
+    setPopout({
+      isOpen: true,
+      title,
+      extraLinks,
+      coverImage,
+      caption,
+      context,
+      insights,
+    });
   };
 
   const closePopout = () =>
-    setPopout({ isOpen: false, title: "", extraLinks: [], coverImage: "", caption: "", context: "", insights: "" });
+    setPopout({
+      isOpen: false,
+      title: "",
+      extraLinks: [],
+      coverImage: "",
+      caption: "",
+      context: "",
+      insights: "",
+    });
 
   return (
     <Section id="projects" className="pt-8">
       <div className="grid gap-6 md:grid-cols-3">
+        <ProjectCard
+          title="Constructing Futures"
+          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'."
+          imageUrl="/IMG_8581.jpeg"
+          onOpen={() =>
+            openPopout(
+              "Constructing Futures",
+              [{ label: "Full Dissertation", url: "/constructing-futures.pdf" }],
+              "/IMG_8581.jpeg",
+              "A hand crafted Paper-mâché skull, burned by the Vitalia community as a proclamation of 'La muerte de la muerte', the death of death.",
+              "This research project engages with a unique collective, in a unique environment. My first foray into the world of ethnographic research, it’s a rough first attempt at addressing the question of how emerging technologies impact the way we represent our species (’the Human’). This project was submitted as my dissertation for my Human Sciences degree.",
+              "I offer an original ethnography of Vitalia, an intentional community located strategically within Próspera on the Honduran island of Roatan. I originally visited Vitalia only to gain a better understanding of transhumanist imaginaries of the Human, of how biotechnology had been enabling the redefinition of the human body and mind. Indeed these technologies of the self are revealed to extend definitions of the body, adding additional ways to perceive and sense the external world. However, while there, I became fascinated by a second class of technology present: the unique political technology of Próspera.\n\nPróspera meanwhile is an ambitious attempt at creating a decentralised, technology focused society within the borders of Honduras. Its residents enjoy exemption from the civil legal codes followed by everyone else in the country. Its legal infrastructure is set up to create, as they state, “the future we want”, creating a low regulation environment for AI researchers, experimental gene therapy trials and medical tourism. Stepping back reveals however that Próspera creates just as many new borders as its founders claim to eliminate. It overlooks and excludes Honduran indigenous voices, creating an ‘encrypted geography’ in which a newly redefined 'Human' is taking shape."
+            )
+          }
+        />
 
-        {/* --- Constructing Futures --- */}
-<ProjectCard
-  title="Constructing Futures"
-  description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'."
-  imageUrl="/IMG_8581.jpeg"
-  onOpen={() =>
-    openPopout(
-      "Constructing Futures",
-      [{ label: "Full Dissertation", url: "/constructing-futures.pdf" }],
-      "/IMG_8581.jpeg",
-      "A hand crafted Paper-mâché skull, burned by the Vitalia community as a proclamation of 'La muerte de la muerte', the death of death.",
-      "This research project engages with a unique collective, in a unique environment. My first foray into the world of ethnographic research, it’s a rough first attempt at addressing the question of how emerging technologies impact the way we represent our species (’the Human’). This project was submitted as my dissertation for my Human Sciences degree.",
-      "I offer an original ethnography of Vitalia, an intentional community located strategically within Próspera on the Honduran island of Roatan. I originally visited Vitalia only to gain a better understanding of transhumanist imaginaries of the Human, of how biotechnology had been enabling the redefinition of the human body and mind. Indeed these technologies of the self are revealed to extend definitions of the body, adding additional ways to perceive and sense the external world. However, while there, I became fascinated by a second class of technology present: the unique political technology of Próspera.\n\nPróspera meanwhile is an ambitious attempt at creating a decentralised, technology focused society within the borders of Honduras. Its residents enjoy exemption from the civil legal codes followed by everyone else in the country. Its legal infrastructure is set up to create, as they state, “the future we want”, creating a low regulation environment for AI researchers, experimental gene therapy trials and medical tourism. Stepping back reveals however that Próspera creates just as many new borders as its founders claim to eliminate. It overlooks and excludes Honduran indigenous voices, creating an ‘encrypted geography’ in which a newly redefined 'Human' is taking shape."
-    )
-  }
-/>
-
-        {/* --- Opportunity Barriers --- */}
         <ProjectCard
           title="Opportunity Barriers"
           description="We use systems mapping to examine the problem of opportunity barriers faced by young first and second generation migrants in the UK."
@@ -180,7 +223,7 @@ const Projects = () => {
               [
                 { label: "Report", url: "/opportunity-report.pdf" },
                 { label: "Reference List", url: "/opportunity-refs.pdf" },
-                { label: "Systems Map", url: "/systems-map.pdf" }
+                { label: "Systems Map", url: "/systems-map.pdf" },
               ],
               "/MTS-Map.jpeg",
               "A systems visualisation of the contributing factors to opportunity barriers faced by young migrants, created in Kumo.io.",
@@ -190,7 +233,6 @@ const Projects = () => {
           }
         />
 
-        {/* --- The Emergence of COVID-19 --- */}
         <ProjectCard
           title="The Emergence of COVID-19"
           description="A short 2023 essay, submitted for my Human Sciences coursework, which tracks the key factors that led to the emergence of the pandemic."
@@ -206,8 +248,8 @@ const Projects = () => {
             )
           }
         />
-
       </div>
+
       <Popout {...popout} onClose={closePopout} />
     </Section>
   );
@@ -226,5 +268,3 @@ export default function PortfolioSite() {
     </div>
   );
 }
-
-
