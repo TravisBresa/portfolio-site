@@ -199,7 +199,7 @@ const Projects = () => {
       <div className="grid gap-6 md:grid-cols-3">
         <ProjectCard
           title="Constructing Futures"
-          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists are looking to 'Make Death Optional'."
+          description="My first foray into the world of ethnographic research, featuring fieldwork at a Special Economic Zone in Honduras where a group of hopeful technologists were looking to 'Make Death Optional'."
           imageUrl="/IMG_8581.jpeg"
           onOpen={() =>
             openPopout(
@@ -207,8 +207,8 @@ const Projects = () => {
               [{ label: "Full Dissertation", url: "/constructing-futures.pdf" }],
               "/IMG_8581.jpeg",
               "A hand crafted Paper-mâché skull, burned by the Vitalia community as a proclamation of 'La muerte de la muerte', the death of death.",
-              "This research project engages with a unique collective, in a unique environment. My first foray into the world of ethnographic research, it’s a rough first attempt at addressing the question of how emerging technologies impact the way we represent our species ('the Human'). This project was submitted as my dissertation for my Human Sciences degree.",
-              "I explore Vitalia, an intentional community located strategically within Próspera on the Honduran island of Roatan. I originally visited Vitalia only to gain a better understanding of transhumanist imaginaries of the Human, of how biotechnology had been enabling the redefinition of the human body and mind. Indeed these technologies of the self are revealed to extend definitions of the body, adding additional ways to perceive and sense the external world. However, while there, I became fascinated by a second class of technology present: the unique political technology of Próspera.\n\nPróspera meanwhile is an ambitious attempt at creating a decentralised, technology focused society within the borders of Honduras. Its residents enjoy exemption from the civil legal codes followed by everyone else in the country. Its legal infrastructure is set up to create, as they state, “the future we want”, creating a low regulation environment for AI researchers, experimental gene therapy trials and medical tourism. Stepping back reveals however that Próspera creates just as many new borders as its founders claim to eliminate. It overlooks and excludes Honduran indigenous voices, creating an ‘encrypted geography’ in which a newly redefined 'Human' is taking shape."
+              "This research project engages with a unique collective, in a unique environment. My first foray into the world of ethnographic research, it’s a rough first attempt at addressing the question of how emerging technologies impact the way we represent our species ('the Human').",
+              "I explore Vitalia, an intentional community located strategically within Próspera on the Honduran island of Roatan. I originally visited Vitalia only to gain a better understanding of transhumanist imaginaries of the Human, of how biotechnology had been enabling the redefinition of the human body and mind. Indeed, these technologies of the self are revealed to extend definitions of the body, adding additional ways to perceive and sense the external world. However, while there, I became fascinated by a second class of technology present: the unique political technology of Próspera.\n\nPróspera meanwhile is an ambitious attempt at creating a decentralised, technology focused society within the borders of Honduras. Its residents enjoy exemption from the civil legal codes followed by everyone else in the country. Its legal infrastructure is set up to create, as they state, “the future we want”, creating a low regulation environment for AI researchers, experimental gene therapy trials and medical tourism. Stepping back reveals however that Próspera creates just as many new borders as its founders claim to eliminate. It overlooks and excludes Honduran indigenous voices, creating an ‘encrypted geography’ in which a newly redefined 'Human' is taking shape."
             )
           }
         />
@@ -235,7 +235,7 @@ const Projects = () => {
 
         <ProjectCard
           title="The Emergence of COVID-19"
-          description="A short 2023 essay, submitted for my Human Sciences coursework, which tracks the key factors that led to the emergence of the pandemic."
+          description="A short 2023 essay that tracks the key factors that led to the emergence of the pandemic."
           imageUrl="/covid.jpeg"
           onOpen={() =>
             openPopout(
